@@ -17,11 +17,12 @@
   $email = $indata["email"];
   $phone_number = $indata["phone_number"];
 
-  if (!check_data($user_id, $first_name, $last_name, $email, $phone_number)) {
+  if (check_data($user_id, $first_name, $last_name, $email, $phone_number)) {
     send_json_response($STATUS_BAD_REQUEST, (object)array(
         'data' => NULL,
         'error' => 'Inproper entry',
     ));
+    exit();
   }
 
   $conn = connect_to_db();
@@ -45,7 +46,7 @@
 
   // Checks to make sure data is authentic
   function check_data($user_id, $first_name, $last_name, $email, $phone_number) {
-    if ($user_id == 0 || $first_name == "" || $last_name == "" || $email == "" || $phone_number == "") {
+    if ($user_id == 0 || ($first_name == "" && $last_name == "" && $email == "" && $phone_number == "")) {
       return true;
     } else {
       return false;
