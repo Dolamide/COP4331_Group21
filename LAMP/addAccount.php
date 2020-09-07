@@ -12,9 +12,9 @@
     }
 
     // Perform the SQL query to find all users with the username provided
-    function perform_insert_query($conn, $username, $password, $passwordSecure, $firstName, $lastName) {
-        $statement = $conn->prepare("INSERT INTO `users` (`username`, `password`, `password_secure`, `first_name`, `last_name`) VALUES (?,?,?,?,?)");
-        $statement->bind_param("sssss", $username, $password, $passwordSecure, $firstName, $lastName);
+    function perform_insert_query($conn, $username, $password, $firstName, $lastName) {
+        $statement = $conn->prepare("INSERT INTO `users` (`username`, `password`, `first_name`, `last_name`) VALUES (?,?,?,?)");
+        $statement->bind_param("ssss", $username, $password, $firstName, $lastName);
         $statement->execute();
         $statement->close();
     }
@@ -32,11 +32,11 @@
     if (count($existing) > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
             'result' => 'EXISTING_ACCOUNT',
-            'error'=> '',
+            'error'=> 'That account already exists',
         ));
     } else {
         $passwordSecure = password_hash($request['password'], PASSWORD_BCRYPT);
-        perform_insert_query($conn, $request['username'], $request['password'], $passwordSecure, $request['first_name'], $request['last_name']);
+        perform_insert_query($conn, $request['username'], $passwordSecure, $request['first_name'], $request['last_name']);
         send_json_response(STATUS_SUCCESS, (object)array(
             'result' => 'SUCCESS',
             'error'=> '',
