@@ -1,26 +1,23 @@
 <?php
-    //TODO Should login return anything except a session/user_id?
-    //     Or will the other pages fetch this information independently?
-
     include 'commons.php';
 
     // Perform the SQL query to find all users with the username provided
-    function perform_delete_query($conn, $contact_id) {
-        $statement = $conn->prepare("DELETE FROM `contacts` WHERE `contact_id`=?");
-        $statement->bind_param("i", $contact_id);
+    function perform_delete_query($conn, $user_id, $contact_id) {
+        $statement = $conn->prepare("DELETE FROM `contacts` WHERE `user_id`=? AND `contact_id`=?");
+        $statement->bind_param("ii", $user_id, $contact_id);
         $statement->execute();
         $rowsAffected = $conn->affected_rows;
         $statement->close();
         return $rowsAffected;
     }
 
-    verify_request_type('POST');
+    verify_request_type('DELETE');
 
-    $request = decode_JSON_request();
-    verify_request_field($request, 'contact_id');
+    verify_request_field($_GET, 'user_id');
+    verify_request_field($_GET, 'contact_id');
 
     $conn = connect_to_db();
-    $rowsAffected = perform_delete_query($conn, $request['contact_id']);
+    $rowsAffected = perform_delete_query($conn, $_GET['user_id'], $_GET['contact_id']);
     if ($rowsAffected > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
             'result' => 'SUCCESS',
@@ -29,7 +26,7 @@
     } else {
         send_json_response(STATUS_SUCCESS, (object)array(
             'result' => 'DOES_NOT_EXIST',
-            'error'=> '',
+            'error'=> 'The contact does not exist',
         ));
     }
 
