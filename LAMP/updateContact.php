@@ -1,7 +1,7 @@
 <?php
   include 'commons.php';
 
-  verify_request_type('POST');
+  verify_request_type('PUT');
 
   $user_id = 0;
   $contact_id = 0;
