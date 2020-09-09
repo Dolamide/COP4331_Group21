@@ -31,14 +31,14 @@
     $existing = perform_user_query($conn, $request['username']);
     if (count($existing) > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
-            'result' => 'EXISTING_ACCOUNT',
-            'error'=> 'That account already exists',
+            'data' => NULL,
+            'error' => 'EXISTING_ACCOUNT'
         ));
     } else {
         $passwordSecure = password_hash($request['password'], PASSWORD_BCRYPT);
         perform_insert_query($conn, $request['username'], $passwordSecure, $request['first_name'], $request['last_name']);
         send_json_response(STATUS_SUCCESS, (object)array(
-            'result' => 'SUCCESS',
+            'data' => NULL,
             'error'=> '',
         ));
     }

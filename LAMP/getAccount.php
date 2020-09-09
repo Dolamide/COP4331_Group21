@@ -22,14 +22,12 @@
         unset($result['password']);
         send_json_response(STATUS_SUCCESS, (object)array(
             'data' => $result,
-            'result' => 'SUCCESS',
             'error' => '',
         ));
     } else {
         send_json_response(STATUS_SUCCESS, (object)array(
             'data' => NULL,
-            'result' => 'DOES_NOT_EXIST',
-            'error' => '',
+            'error' => 'DOES_NOT_EXIST',
         ));
     }
 

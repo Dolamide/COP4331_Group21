@@ -34,7 +34,7 @@
   } else {
     send_json_response($STATUS_SUCCESS, (object)array(
         'data' => NULL,
-        'error' => 'No results matching',
+        'error' => 'NO_RESULTS',
     ));
   }
 

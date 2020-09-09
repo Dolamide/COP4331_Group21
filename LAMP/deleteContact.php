@@ -20,13 +20,14 @@
     $rowsAffected = perform_delete_query($conn, $_GET['user_id'], $_GET['contact_id']);
     if ($rowsAffected > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
+            'data' => NULL,
             'result' => 'SUCCESS',
-            'error'=> '',
+            'error'=> ''
         ));
     } else {
         send_json_response(STATUS_SUCCESS, (object)array(
-            'result' => 'DOES_NOT_EXIST',
-            'error'=> 'The contact does not exist',
+            'data' => NULL,
+            'error'=> 'DOES_NOT_EXIST'
         ));
     }
 

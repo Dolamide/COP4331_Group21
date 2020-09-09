@@ -33,9 +33,10 @@
   if (mysqli_query($conn, $sql)) {
     send_json_response($STATUS_SUCCESS, (object)array(
         'data' => NULL,
-        'error' => 'Entry created successfully',
+        'error' => '',
     ));
   } else {
+    //TODO json
     echo "Error: " . $sql . "" . mysqli_error($conn);
   }
   mysqli_close($conn);

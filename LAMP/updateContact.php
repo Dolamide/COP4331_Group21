@@ -26,12 +26,12 @@
   if($conn->multi_query($sql)) {
     send_json_response($STATUS_SUCCESS, (object)array(
         'data' => NULL,
-        'error' => 'Contact successfully updated',
+        'error' => '',
     ));
   } else {
     send_json_response($STATUS_INTERNAL_ERROR, (object)array(
         'data' => NULL,
-        'error' => 'Error',
+        'error' => 'ERROR',
     ));
   }
 
