@@ -11,13 +11,12 @@
         return $results;
     }
 
-    verify_request_type('POST');
+    verify_request_type('GET');
 
-    $request = decode_JSON_request();
-    verify_request_field($request, 'user_id');
+    verify_request_field($_GET, 'user_id');
 
     $conn = connect_to_db();
-    $results = perform_user_query($conn, $request['user_id']);
+    $results = perform_user_query($conn, $_GET['user_id']);
     if (count($results) > 0) {
         $result = $results[0];
         unset($result['password']);
