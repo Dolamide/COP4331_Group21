@@ -41,7 +41,7 @@ body {
 
 .login {
   width: 30rem;
-  height: 19rem;
+  height: 21rem;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -99,6 +99,8 @@ body {
   font-weight: 700;
   /* border-radius: 5%; */
   text-transform: uppercase;
+
+  margin: 0;
 
   /* left: 90%; */
   /* bottom: 50%; */
@@ -269,3 +271,4 @@ tr:hover {
 .hide-row {
   display: none;
 }
+
