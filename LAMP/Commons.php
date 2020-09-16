@@ -21,7 +21,7 @@
          if (!isset($request[$fieldName])) {
              send_json_response(STATUS_BAD_REQUEST, (object)array(
                  'data' => NULL,
-                 'error' => 'Request JSON must include a ' . $fieldName . ' field',
+                 'error' => 'Request must include a ' . $fieldName . ' field',
              ));
              exit();
          }
