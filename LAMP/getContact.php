@@ -18,7 +18,7 @@
   if($result->num_rows > 0) {
     $results = $result->fetch_all(MYSQLI_ASSOC);
     send_json_response($STATUS_SUCCESS, (object)array(
-        'data' => $results,
+        'data' => $results[0],
         'error' => '',
     ));
   } else {
