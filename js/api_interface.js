@@ -53,6 +53,16 @@ const deleteContact = async (user_id, contact_id) => {
 }
 
 /**
+ * Gets contact details by user id and contact id
+ * 
+ * @param {int} user_id The id of the user
+ * @param {int} contact_id The id of the contact
+ */
+const getContact = async (user_id, contact_id) => {
+    return getRequest("/LAMP/getContact.php", { user_id, contact_id });
+}
+
+/**
  * Gets all of a user's contacts
  * 
  * @param {int} user_id The id of the user
