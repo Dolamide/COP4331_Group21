@@ -9,6 +9,7 @@ const doRegister = async () => {
           document.getElementById('login-result').innerHTML = '<p>Account exists</p>';
       } else {
           document.getElementById('login-result').innerHTML = '<p>Account created successfully</p>';
+          window.location.href = "/loginpage.html";
       }
     } else {
       document.getElementById('login-result').innerHTML = "<p>Incomplete entry</p>"
