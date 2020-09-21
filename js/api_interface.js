@@ -38,7 +38,7 @@ const addAccount = async (username, password, first_name, last_name) => {
  * @param {*} email The contact's email
  * @param {*} phone_number The contact's phone number
  */
-const addContact = async (user_id, first_name, last_name, email, phone_number ) => {
+const addContact = async (user_id, first_name, last_name, email, phone_number) => {
     return postRequest("/LAMP/addContact.php", { user_id, first_name, last_name, email, phone_number });
 }
 

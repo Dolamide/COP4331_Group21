@@ -3,10 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add New Contact</title>
+
+    <title>Contacts</title>
     <link rel="stylesheet" a href="css/bootstrap.css" />
     <link rel="stylesheet" a href="css/fonts.css" />
     <link rel="stylesheet" a href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
       rel="stylesheet"
@@ -15,30 +24,124 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
     <style>
       html {
-        background: url(../images/contactspage.jpg) no-repeat center fixed;
+        background: url(./images/loginpage.jpg) no-repeat center fixed;
         background-size: cover;
       }
     </style>
   </head>
-
   <body>
     <div class="navbar">
       <a href="home.html">Home</a>
-      <a href="searchcontacts.html">Search</a>
-      <a href="addcontacts.html">Add New Contact</a>
-      <a href="loginpage.html">Logout</a>
+      
+      <button id='logout'>Logout</button>
     </div>
-    <div class="home form-container">
-      <span class="newcontact">Contact Book</span>
-      <div class="contactbook">
-        <a href="searchcontacts.html">Search</a>
+    <div class="search form-container">
+      <input type="text" id="search " placeholder="Search..." />
+      <br />
+      <button
+        type="button"
+        id="searchbutton"
+        class="buttons"
+        onclick="doSearch();"
+      >
+        Search
+      </button>
+    
+      <a href="addcontacts.html">
 
-        <a href="addcontacts.html">Add New Contact</a>
-
-        <a href="loginpage.html">Logout</a>
-      </div>
+      <button
+        type="button"
+        id="addcontact"
+        class="buttons"
+      >
+        Add Contact
+      </button></a>
     </div>
+    </div>
+
+    <!-- Table of contacts -->
+    <div class="table-container">
+      <table class="contactstable scroll">
+        <tr>
+          <th class="tl column tableheader tlfname">First Name</th>
+          <th class="tl column tableheader tllname">Last Name</th>
+          <th class="tl column tableheader phone">Phone Number</th>
+    
+        </tr>
+        <tr>
+          <td>JON</td>
+          <td>SMITH</td>
+          <td>123-456-7890</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Are you sure you want to delete this contact</p>
+              <button
+        type="button"
+        id="addcontact"
+        class="buttons"
+      >
+        Yes
+      </button>
+      <button
+        type="button"
+        id="addcontact"
+        class="buttons"
+      >
+        No
+      </button>
+            </div>
+          
+          </div>
+
+         <!--  <td class="second-row">
+            <p class="address">Address: 123 Main Av, Orlando</p>
+            <p class="email">email: myemail@email.com</p>
+          </td> -->
+          <td class="second-row">myemail@email.com</td>
+        </tr>
+      </table>
+    </div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+    <script src="/js/logout.js"></script>
   </body>
 </html>
