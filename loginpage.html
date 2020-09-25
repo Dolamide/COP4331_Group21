@@ -26,7 +26,7 @@
     </style>
   </head>
   <body>
-    <div class="login form-container center">
+    <form class="login form-container center">
       <!-- <p id="logintitle">Login</p> -->
       <p class="lrtitle">Login</p>
 
@@ -45,20 +45,18 @@
       <br />
 
       <button
-        type="button"
-        id="loginbutton"
+        type="submit"
+        id="login"
         class="buttons"
-        onclick="doLogin();"
       >
         Sign In
       </button>
       <br />
       <a href="registerpage.html">New member? Sign up!</a>
 
-      <span id="login-result"></span>
-      <script src="/js/session.js"></script>
-      <script src="/js/api_interface.js"></script>
-      <script src="/js/login.js"></script>
-    </div>
+    </form>
+    <script src="/js/session.js"></script>
+    <script src="/js/api_interface.js"></script>
+    <script src="/js/login.js"></script>
   </body>
 </html>
