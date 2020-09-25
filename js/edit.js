@@ -27,4 +27,4 @@ document.getElementById('submit').addEventListener("click", async (event) => {
     await updateContact(user_id, contact_id, first_name, last_name, email, phone_number);
 
     document.location.href = '/home.html';
-});
+}); 

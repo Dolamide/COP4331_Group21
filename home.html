@@ -31,50 +31,70 @@
         background-size: cover;
       }
     </style>
+     <!-- <img src="./images/loginpage.jpg" style="max-width:100%;height:auto;">  -->
   </head>
   <body>
     <div class="navbar">
-      <a href="home.html">Home</a>
-      
-      <button id='logout'>Logout</button>
+      <button class="navbut" href="home.html">Home</button>
+      <button id="logout" class="navbut">Logout</button>
     </div>
-    <div class="search form-container">
-      <input type="text" id="search " placeholder="Search..." />
-      <br />
-      <button
-        type="button"
-        id="searchbutton"
-        class="buttons"
-        onclick="doSearch();"
-      >
-        Search
-      </button>
-    
-      <a href="addcontacts.html">
+    <div class="search form-container" class="table-container">
+      <div class="input-group" >
+        <a href="addcontacts.html">
+          <button
+            type="button"
+            id="addcontact"
+            class="buttons"
+          >
+            Add Contact
+          </button>
+        </a>
+        <input type="text" id="searchtext" placeholder="Search..." />
+        <button
+          class="buttons"
+          id="searchbutton";
+          
+          onclick="doSearch();"
+          data-toggle="tooltip"
+        >
+         <i class="material-icons">&#xe8b6;</i>
+        </button>
+        
+      </div>
 
-      <button
-        type="button"
-        id="addcontact"
-        class="buttons"
-      >
-        Add Contact
-      </button></a>
-    </div>
-    </div>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content flex-container">
+          <span class="close">&times;</span>
+          <p class="modal-text">Are you sure you want to delete this contact?</p>
+          
+          <button type="button" class="buttons"         >
+            Yes
+          </button>
+          <button type="button" class="buttons" 
+          >
+            No
+          </button>
+          
+        </div>
+      </div>
+    
 
     <!-- Table of contacts -->
-    <div class="table-container">
-      <table class="contactstable scroll">
+      <table class="contactstable">
         <tr>
-          <th class="tl column tableheader tlfname">First Name</th>
-          <th class="tl column tableheader tllname">Last Name</th>
-          <th class="tl column tableheader phone">Phone Number</th>
+          <th scope="col" class="tl column tableheader tlfname">First Name</th>
+          <th scope="col" class="tl column tableheader tllname">Last Name</th>
+          <th scope="col" class="tl column tableheader phone">Phone Number</th>
+          <th scope="col" class="tl column tableheader email">E-Mail</th>
     
         </tr>
         <tr>
-          <td>JON</td>
-          <td>SMITH</td>
-          <td>123-456-7890</td>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
           <td>
             <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
               ><i class="material-icons">&#xE254;</i></a>
@@ -82,35 +102,113 @@
             id="myBtn" ><i class="material-icons">&#xE872;</i></a>
           </td>
 
-          <div id="myModal" class="modal">
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
 
-            <!-- Modal content -->
-            <div class="modal-content">
-              <span class="close">&times;</span>
-              <p>Are you sure you want to delete this contact</p>
-              <button
-        type="button"
-        id="addcontact"
-        class="buttons"
-      >
-        Yes
-      </button>
-      <button
-        type="button"
-        id="addcontact"
-        class="buttons"
-      >
-        No
-      </button>
-            </div>
-          
-          </div>
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
 
-         <!--  <td class="second-row">
-            <p class="address">Address: 123 Main Av, Orlando</p>
-            <p class="email">email: myemail@email.com</p>
-          </td> -->
-          <td class="second-row">myemail@email.com</td>
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        <tr>
+          <td data-label="Name">JON</td>
+          <td data-label="Last Name">SMITH</td>
+          <td data-label="Phone">123-456-7890</td>
+          <td data-label="E-Mail">myemail@email.com</td>
+          <td>
+            <a href="editcontact.html" class="edit" title="Edit" data-toggle="tooltip"
+              ><i class="material-icons">&#xE254;</i></a>
+            <a class="delete" title="Delete" data-toggle="tooltip"
+            id="myBtn" ><i class="material-icons">&#xE872;</i></a>
+          </td>
+
+        </tr>
+        
+
         </tr>
       </table>
     </div>
@@ -142,6 +240,7 @@ window.onclick = function(event) {
 }
 </script>
 
+    <script src="/js/session.js"></script>
     <script src="/js/logout.js"></script>
   </body>
 </html>
