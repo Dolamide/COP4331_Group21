@@ -39,28 +39,39 @@
       <button id="logout" class="navbut">Logout</button>
     </div>
     <div class="search form-container" class="table-container">
-      <div class="input-group" >
-        <a href="addcontacts.html">
-          <button
-            type="button"
-            id="addcontact"
-            class="buttons"
-          >
-            Add Contact
-          </button>
-        </a>
-        <input type="text" id="searchtext" placeholder="Search..." />
-        <button
-          class="buttons"
-          id="searchbutton";
-          
-          onclick="doSearch();"
-          data-toggle="tooltip"
-        >
-         <i class="material-icons">&#xe8b6;</i>
-        </button>
+      <div class="addandseach" >
+        <ul class="nav justify-content-between ">
+            <li class="nav-item">
+          <a href="addcontacts.html">
+            <button
+              type="button"
+              id="addcontact"
+              class="buttons"
+            >
+              Add Contact
+            </button>
+          </a>
+        </li>
+        <li class="nav-item">
+            <div class="input-group" >
+            <input type="text" id="searchtext" placeholder="Search..." />
+            <div class="input-group-append">
+            <button
+              class="buttons"
+              id="searchbutton";
+              
+              onclick="doSearch();"
+              data-toggle="tooltip"
+            >
+             <i class="material-icons">&#xe8b6;</i>
+            </button>
+            </div>
+            </div>
+          </li>
+          </ul>
         
       </div>
+    
 
       <div id="myModal" class="modal">
 
