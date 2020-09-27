@@ -42,14 +42,6 @@ async function listContactsFunct() {
           '<td><a href="editcontact.html?contact_id=' +
           contacts[i].contact_id +
           '" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a><a class="delete" title="Delete" data-toggle="tooltip" id="myBtn" ><i class="material-icons">&#xE872;</i></a></td>';
-        // document.getElementById("show-panel").innerHTML +=
-        // '<div class="contact-item">Name:' +
-        // contacts[i].name +
-        // "<br>Phone:" +
-        // contacts[i].phone +
-        // "<br>Email:" +
-        // contacts[i].email +
-        // "</div><hr>";
       }
     } else {
       document.getElementById("show-panel").innerHTML +=
