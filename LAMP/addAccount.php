@@ -32,7 +32,7 @@
     if (count($existing) > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
             'data' => NULL,
-            'error' => 'EXISTING_ACCOUNT'
+            'error' => 'An account with this username already exists.'
         ));
     } else {
         $passwordSecure = password_hash($request['password'], PASSWORD_BCRYPT);
