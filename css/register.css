@@ -19,6 +19,8 @@
     padding: 20px;
     border: 1px solid #888;
     width: 20%; /* Could be more or less, depending on screen size */
+    display: flex;
+    justify-content: space-between;
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
@@ -28,7 +30,6 @@
   /* The Close Button */
   .close_Reg {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
   }
