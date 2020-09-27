@@ -25,6 +25,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+
+    <!-- Scripts -->
+    <script src="/js/session.js" defer></script>
+    <script src="/js/api_interface.js" defer></script>
+    <script src="/js/logout.js" defer></script>
+    <script src="/js/home.js" defer></script>
+    <script src="/js/listContacts.js" defer></script>
+
     <style>
       html {
         background: url(./images/loginpage.jpg) no-repeat center fixed;
@@ -33,7 +41,7 @@
     </style>
      <!-- <img src="./images/loginpage.jpg" style="max-width:100%;height:auto;">  -->
   </head>
-  <body onload="listContactsFunct()">
+  <body>
     <div class="navbar">
       <button class="navbut" href="home.html">Home</button>
       <button id="logout" class="navbut">Logout</button>
@@ -130,10 +138,6 @@ window.onclick = function(event) {
 }
 </script>
 
-    <script src="/js/session.js"></script>
-    <script src="/js/api_interface.js"></script>
-    <script src="/js/logout.js"></script>
-    <script src="/js/home.js"></script>
-    <script src="/js/listContacts.js"></script>
+    
   </body>
 </html>

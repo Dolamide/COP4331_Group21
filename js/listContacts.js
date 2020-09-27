@@ -1,12 +1,11 @@
 document
   .getElementById("searchbutton")
   .addEventListener("click", async (event) => {
+    event.preventDefault();
     listContactsFunct();
   });
 
 async function listContactsFunct() {
-  event.preventDefault();
-
   const user_id = getActiveUser().user_id;
 
   const query = document.getElementById("search").value;
@@ -48,3 +47,5 @@ async function listContactsFunct() {
       '<div class="contact-item">You have no contacts. Would you like to add a new contact?</div><hr>';
   }
 }
+
+listContactsFunct();
