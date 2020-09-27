@@ -6,12 +6,13 @@ const doRegister = async () => {
     if(!(username === "" || password === "" || first_name === "" || last_name === "")) {
     const { data, error } = await addAccount(username, password, first_name, last_name);
       if (!(error === "")) {
-          document.getElementById('login-result').innerHTML = '<p>Account exists</p>';
+          document.getElementById('modalError').innerHTML = 'Account exists';
+          $("#myModal").modal('show');
       } else {
-          document.getElementById('login-result').innerHTML = '<p>Account created successfully</p>';
           window.location.href = "/loginpage.html";
       }
     } else {
-      document.getElementById('login-result').innerHTML = "<p>Incomplete entry</p>"
+      document.getElementById('modalError').innerHTML = "Incomplete entry";
+      $("#myModal").modal('show');
     }
 }
