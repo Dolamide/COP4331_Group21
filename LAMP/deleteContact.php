@@ -21,7 +21,6 @@
     if ($rowsAffected > 0) {
         send_json_response(STATUS_SUCCESS, (object)array(
             'data' => NULL,
-            'result' => 'SUCCESS',
             'error'=> ''
         ));
     } else {
