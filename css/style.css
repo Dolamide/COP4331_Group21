@@ -113,8 +113,6 @@ body {
 }
 
 .search {
-  padding: 0;
-  padding: 1rem;
   width: 80%;
   height: 100%;
   top: 30%;
@@ -228,26 +226,21 @@ body {
 
 .table-container {
   color: #000;
-  position: absolute;
   background: rgba(210, 211, 211, 0.7);
-  border-radius: 2pc;
   font-family: "Roboto", sans-serif;
   text-align: center;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
 
 .table-container::-webkit-scrollbar {
   display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-
-.table-container {
-  -ms-overflow-style: none;
-  /* IE and Edge */
-  scrollbar-width: none;
-  /* Firefox */
 }
 
 .contactstable {
@@ -502,7 +495,6 @@ button {
   margin-right: 7%;
 }
 
-.addandseach {
-  margin-left: 5%;
-  margin-right: 0;
+.contact-options {
+  margin: 15px 15px 5px 15px;
 }
