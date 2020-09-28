@@ -40,11 +40,19 @@ async function listContactsFunct() {
         "</td>" +
         '<td><a href="editcontact.html?contact_id=' +
         contacts[i].contact_id +
-        '" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a><a class="delete" title="Delete" data-toggle="tooltip" id="myBtn" ><i class="material-icons">&#xE872;</i></a></td>';
+        '" class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>' +
+        `<a 
+          class="delete" 
+          title="Delete" 
+          onclick="openDeleteModal(this)"
+          data-contact-name="${contacts[i].first_name} ${contacts[i].last_name}" 
+          data-contact-id="${contacts[i].contact_id}">
+          <i class="material-icons">&#xE872;</i>
+        </a></td>`;
     }
   } else {
     document.getElementById("show-panel").innerHTML +=
-      '<div class="contact-item">You have no contacts. Would you like to add a new contact?</div><hr>';
+      '<div class="contact-item">You have no contacts. Would you like to add a new contact?</div>';
   }
 }
 
