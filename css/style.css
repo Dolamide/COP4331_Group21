@@ -240,7 +240,7 @@ body {
 	margin: 0;
 	padding: 0;
 	border-collapse: collapse;
-	height: 82%;
+	max-height: 82%;
 	overflow-y: auto;
 }
 
