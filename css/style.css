@@ -159,6 +159,7 @@ body {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   margin: 0;
+  padding: 1rem;
 }
 
 .buttons {
@@ -185,6 +186,20 @@ body {
   margin-bottom: 10px;
 }
 
+@media screen and (max-width: 600px) {
+  #addcontact {
+    width: 100%;
+  }
+
+  #search {
+    width: 75%;
+  }
+
+  #searchbutton {
+    width: 25%
+  }
+}
+
 #searchtext {
   width: 70%;
   border-radius: 1pc;
@@ -200,6 +215,7 @@ body {
   margin: 0;
   height: 40px;
   width: 60px;
+  align-self: auto;
 }
 
 .form-container a {

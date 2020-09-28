@@ -36,8 +36,23 @@
     <button id="logout" class="navbut">Logout</button>
   </div>
   <div class="search form-container" class="table-container">
-    <div class="contact-options">
-      <ul class="nav justify-content-between ">
+    <div class="contact-options row justify-content-start">
+      <a class="col-sm-3" href="addcontacts.html">
+        <button type="button" id="addcontact" class="buttons float-left">
+          Add Contact
+        </button>
+      </a>
+      <div class="col-sm-9">
+        <div class="input-group justify-content-end">
+          <input type="text" id="search" placeholder="Search..." />
+          <div class="input-group-append">
+            <button class="buttons" id="searchbutton" data-toggle="tooltip">
+              <i class="material-icons">&#xe8b6;</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- <ul class="nav justify-content-between ">
         <li class="nav-item">
           <a href="addcontacts.html">
             <button type="button" id="addcontact" class="buttons">
@@ -55,7 +70,7 @@
             </div>
           </div>
         </li>
-      </ul>
+      </ul> -->
 
     </div>
 
